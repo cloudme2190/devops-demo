@@ -18,13 +18,13 @@ node {
    }
 
    stage('Upload Artifact') {
-     sh script: 'curl -uadmin:APBCtBCDns234HC98JejBsWfu6c -T ${WORKSPACE}/target/*.jar http://localhost:8081/artifactory/generic-local/devops-demo/DEV_ENV/${BUILD_NUMBER}/'
-   }
+     sh script: 'curl -uadmin:AP4kFCe7TWs4Pv6uACYBY9AFKXz -T ${WORKSPACE}/target/*.jar http://localhost:8081/artifactory/generic-local/devops-demo/DEV_ENV/${BUILD_NUMBER}/'
+    }
    
    stage('Download Artifact') {
       dir('../../userContent/') {
-          sh script: 'curl -uadmin:APBCtBCDns234HC98JejBsWfu6c -O http://localhost:8081/artifactory/generic-local/devops-demo/DEV_ENV/${BUILD_NUMBER}/devops-demo-app-0.0.1-SNAPSHOT.jar'
+          sh script: 'curl -uadmin:AP4kFCe7TWs4Pv6uACYBY9AFKXz -O http://localhost:8081/artifactory/generic-local/devops-demo/DEV_ENV/${BUILD_NUMBER}/devops-demo-app-0.0.1-SNAPSHOT.jar'
       }
-      sh script: 'curl -uadmin:APBCtBCDns234HC98JejBsWfu6c -O http://localhost:8081/artifactory/generic-local/devops-demo/DEV_ENV/${BUILD_NUMBER}/devops-demo-app-0.0.1-SNAPSHOT.jar'
+      sh script: 'curl -uadmin:AP4kFCe7TWs4Pv6uACYBY9AFKXz -O http://localhost:8081/artifactory/generic-local/devops-demo/DEV_ENV/${BUILD_NUMBER}/devops-demo-app-0.0.1-SNAPSHOT.jar'
    }   
 }
