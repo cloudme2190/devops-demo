@@ -29,6 +29,6 @@ node {
    }
    
    stage('Analysis') {
-      sh "'${mvnhome}/bin/mvn' sonar:sonar"
+      sh "'${mvnHome}/bin/mvn' sonar:sonar"
    }
 }
