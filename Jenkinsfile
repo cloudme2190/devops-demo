@@ -26,5 +26,9 @@ node {
           sh script: 'curl -uadmin:AP4kFCe7TWs4Pv6uACYBY9AFKXz -O http://localhost:8081/artifactory/generic-local/devops-demo/DEV_ENV/${BUILD_NUMBER}/devops-demo-app-0.0.1-SNAPSHOT.jar'
       }
       sh script: 'curl -uadmin:AP4kFCe7TWs4Pv6uACYBY9AFKXz -O http://localhost:8081/artifactory/generic-local/devops-demo/DEV_ENV/${BUILD_NUMBER}/devops-demo-app-0.0.1-SNAPSHOT.jar'
-   }   
+   }
+   
+   stage('Analysis') {
+      sh "'${mvnhome}/bin/mvn' sonar:sonar"
+   }
 }
